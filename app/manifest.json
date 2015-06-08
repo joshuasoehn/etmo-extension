@@ -1,0 +1,38 @@
+{
+  "name": "Etmo",
+  "version": "0.0.4",
+  "manifest_version": 2,
+  "description": "Post stuff to Etmo",
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "scripts/chromereload.js",
+      "scripts/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["bower_components/jquery/jquery.min.js", "scripts/content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon-19.png",
+      "38": "images/icon-38.png"
+    },
+    "default_title": "Etmo",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "*://use.typekit.net/*",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "content_security_policy": "script-src 'self' https://use.typekit.net; object-src 'self'"
+}
