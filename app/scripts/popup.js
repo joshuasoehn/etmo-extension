@@ -6,9 +6,10 @@ chrome.tabs.getSelected(null, function(tab) {
 
   chrome.tabs.sendRequest(tab.id, {action: "getImages"}, function(response) {
     $.each( response.images, function( key, value ) {
+      console.log(response.images);
       $(".images").append("<img src='" + value + "'/>");
     });
-    $(".images img").each( function() {
+     $(".images img").each( function() {
       if ( $(this).get(0).naturalWidth < 250 ) {
         $(this).hide();
       }
@@ -16,6 +17,7 @@ chrome.tabs.getSelected(null, function(tab) {
   });
 
   chrome.tabs.sendRequest(tab.id, {action: "getPrice"}, function(response) {
+    console.log(response.price);
     $(".product_price").val(response.price)
   });
 
@@ -33,5 +35,7 @@ $(function(){
     }
     $(".product_image").val(this.src);
   });
+
+
 
 });

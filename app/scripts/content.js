@@ -12,12 +12,5 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
  if (request.action == "getImages")
   sendResponse({images});
  else
-  sendResponse({});
-});
-
-chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
- if (request.action == "getPrice")
   sendResponse({price});
- else
-  sendResponse({});
 });
