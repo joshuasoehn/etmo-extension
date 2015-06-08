@@ -1,32 +1,39 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <link href="styles/main.css" rel="stylesheet">
-    <script src="https://use.typekit.net/thg8ubw.js"></script>
-    <script src="scripts/load-typekit.js"></script>
+  <meta charset="utf-8">
+  <link href="styles/main.css" rel="stylesheet">
+  <script src="https://use.typekit.net/thg8ubw.js"></script>
+  <script src="scripts/load-typekit.js"></script>
   </head>
   <body>
-    <h1>Etmo</h1>
-    <form action="">
-        <label for="product_name">Name</label>
-        <input type="text" class="product_name" value=" ">
+  <header>
+    <h1>Post to Etmo</h1>
+  </header>
 
-        <label for="product_url">Link</label>
-        <input type="text" class="product_url" value=" ">
+  <section class="content">
 
-        <label for="product_price">Price</label>
-        <input type="text" class="product_price" value=" ">
+  <form action="">
+    <label for="product_name">Name</label>
+    <input type="text" class="product_name" value=" ">
 
-        <label for="url">Image</label>
-        <input type="text" class="product_image" value=" ">
+    <label for="product_url">Link</label>
+    <input type="text" class="product_url" value=" ">
 
-        <input type="button" value="Post">
-    </form>
-    <div class="images">
+    <label for="product_price">Price</label>
+    <input type="text" class="product_price" value=" ">
 
-    </div>
-    <script src="bower_components/jquery/jquery.min.js"></script>
-    <script src="scripts/popup.js"></script>
+    <label for="url">Image</label>
+    <input type="text" class="product_image" value=" ">
+
+    <div class="images"></div>
+
+    <input class="button" type="button" value="Post">
+  </form>
+
+  </section>
+
+  <script src="bower_components/jquery/jquery.min.js"></script>
+  <script src="scripts/popup.js"></script>
   </body>
 </html>
