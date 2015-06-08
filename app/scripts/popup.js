@@ -4,15 +4,19 @@ console.log('\'Allo \'Allo! Popup');
 
 chrome.tabs.getSelected(null, function(tab) {
 
-  chrome.tabs.sendRequest(tab.id, {action: "getDOM"}, function(response) {
+  chrome.tabs.sendRequest(tab.id, {action: "getImages"}, function(response) {
     $.each( response.images, function( key, value ) {
       $(".images").append("<img src='" + value + "'/>");
     });
     $(".images img").each( function() {
       if ( $(this).get(0).naturalWidth < 250 ) {
-        $(this).remove();
+        $(this).hide();
       }
     });
+  });
+
+  chrome.tabs.sendRequest(tab.id, {action: "getPrice"}, function(response) {
+    $(".product_price").val(response.price)
   });
 
   $(".product_name").val(tab.title);

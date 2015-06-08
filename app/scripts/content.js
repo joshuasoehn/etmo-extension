@@ -1,15 +1,23 @@
 'use strict';
 
-var firstHref = $("a[href^='http']").eq(0).attr("href");
 
 var images = [];
 for(var i = 0; i < document.images.length; i++){
   images.push(document.images[i].src);
 }
 
+var price = "30";
+
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
- if (request.action == "getDOM")
+ if (request.action == "getImages")
   sendResponse({images});
  else
-  sendResponse({}); // Send nothing..
+  sendResponse({});
+});
+
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+ if (request.action == "getPrice")
+  sendResponse({price});
+ else
+  sendResponse({});
 });
